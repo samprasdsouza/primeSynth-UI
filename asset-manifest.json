@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/primesynth/static/css/main.571f9c37.css",
+    "main.js": "/primesynth/static/js/main.5c1bae1c.js",
+    "static/media/PS-007299.png": "/primesynth/static/media/PS-007299.fe2504c4b5923368c6cc.png",
+    "static/media/Primesynth signature logo (1).png": "/primesynth/static/media/Primesynth signature logo (1).1526c27dfa0b8934e857.png",
+    "index.html": "/primesynth/index.html",
+    "main.571f9c37.css.map": "/primesynth/static/css/main.571f9c37.css.map",
+    "main.5c1bae1c.js.map": "/primesynth/static/js/main.5c1bae1c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.571f9c37.css",
+    "static/js/main.5c1bae1c.js"
+  ]
+}
