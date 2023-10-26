@@ -1,4 +1,4 @@
-import logo from './svg/Primesynth signature logo (1).png'
+import logo from './svg/Primesynth.png'
 function Header() {
     return (
         <div style={{ height:'200px'}} className="d-flex justify-content-between align-items-center">

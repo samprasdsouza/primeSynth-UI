@@ -17,8 +17,8 @@ export const CardBody = ({ card }) => {
             </div>
           </div>
         )}
-        <div className="p-3 d-flex w-100 justify-content-between" >
-          <div style={{width: '15px', height:'50px'}}>
+        <div className="p-3 w-100 " >
+          <div >
             {card.TopImage}
           </div>
           <div className={`w-100 ${card.styleBodyCenter ? 'd-flex align-items-center' : ''}`} >

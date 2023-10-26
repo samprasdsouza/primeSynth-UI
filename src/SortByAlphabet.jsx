@@ -12,14 +12,14 @@ export const SortByAlphabet = () => {
     const data  = test
     console.log(data);
     const displaycards = data.map((card) => ({
-        TopImage: <div><img src={comp} alt="logo"/></div>,
+        TopImage: <div><img style={{ height: '250px', width: '250px'}} src={comp} alt="logo"/></div>,
         Title: (
           <div style={{ background:"#FFA800"}} className="p-2">
             <span className="text-light">CAT No. : {get(card, ["CAT No"])}</span>
           </div>
         ),
         cardStyle: isEmpty(card.cardStyle)
-          ? { height: '270px' }
+          ? { height: '360px', width: '350px' }
           : card.cardStyle,
         navigateTo: `/product-page/${get(card, ["product_name"], " ")}`,
         openInNewTab: true,

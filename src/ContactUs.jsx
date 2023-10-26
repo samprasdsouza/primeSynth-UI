@@ -5,7 +5,7 @@ export const ContactUs = () => {
   return (
     <>
       <Header />
-      <div className="d-flex justify-content-center align-items-center text-color text-18"> Contact Us </div>
+      <div className="d-flex justify-content-center align-items-center text-color text"> Contact Us </div>
       <div className="d-flex justify-content-center align-items-center">
         <div className="d-flex justify-content-between" style={{ background: '#F7F7F7', height: '573px', width: '1632px' }}  >
           <div className="d-flex justify-content-center align-items-center" style={{ width: '816px'}}>
