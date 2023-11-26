@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import App from './App'
+import  App  from './App'
 import { PageNotFound } from './PageNotFound'
 import { ContactUs } from './ContactUs'
 import { ProductsCategory } from './ProductsCategory'

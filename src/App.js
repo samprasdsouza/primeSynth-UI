@@ -3,13 +3,23 @@ import Header from './Header';
 import Footer from './Footer';
 import logo from './svg/second-img.png'
 import firstLogo from './svg/first-img.png'
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getProductsStart } from './store/slices/productSlice';
 
 
-function App() {
+
+export default function App() {
   
+  const dispatch = useDispatch()
+
+  useEffect(() =>{
+    dispatch(getProductsStart())
+  }, [dispatch, getProductsStart])
   return (
     <>
     <Header/>
+
     <div className="App">
       <div ><img src={logo} alt="logo" style={{ width: '1792px',height:'750px'}}/></div>
       <div className="d-flex justify-content-center align-items-center" >PrimeSynth is a reliable supplier of reference standards, API impurities, R&D Chemicals & Custom synthesis products</div>
@@ -32,5 +42,3 @@ function App() {
   </>
   );
 }
-
-export default App;
