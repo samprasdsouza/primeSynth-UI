@@ -4,6 +4,7 @@ import * as api from '../../services/apiCall'
 
 function * getProducts () {
     try {
+        console.log('there');
         const response = yield call(api.primesynthService.getAllProducts)
         yield put(actions.getProductsSuccess(response.data))
     } catch (error) {
@@ -21,7 +22,7 @@ function * getProduct () {
 }
 
 function * productSaga () {
-    yield takeLatest('user/getProductsStart', getProducts);
+    yield takeLatest('users/getProductsStart', getProducts);
     yield takeLatest('user/getProductStart', getProduct);
 }
 

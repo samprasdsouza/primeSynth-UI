@@ -3,9 +3,8 @@ import axios from "axios"
 
 export const primesynthService = {
     getAllProducts: async () => {
-        console.log('here');
         const getAllProducts = await axios.get(
-            `${PRIMESYNTH_API_URL}`
+            `${PRIMESYNTH_API_URL}/api/v1/products?offset=e30%3D`
         )
         return { data: getAllProducts }
     }

@@ -1,2 +1,2 @@
 
-export const PRIMESYNTH_API_URL = 'http://localhost:3500/'
+export const PRIMESYNTH_API_URL = 'http://localhost:3500'

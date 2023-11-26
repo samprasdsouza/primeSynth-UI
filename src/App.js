@@ -5,9 +5,10 @@ import logo from './svg/second-img.png'
 import firstLogo from './svg/first-img.png'
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getProductsStart } from './store/slices/productSlice';
+// import { getProductsStart } from './store/slices/productSlice';
+import { createAction } from '@reduxjs/toolkit';
 
-
+const getProductsStart = createAction('users/getProductsStart')
 
 export default function App() {
   
