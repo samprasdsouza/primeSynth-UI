@@ -7,6 +7,7 @@ import { ProductsCategory } from './ProductsCategory'
 import { SortByAlphabet } from './SortByAlphabet'
 import { ProductDescription } from './ProductDescription'
 import { GetQuote } from './GetQuote'
+import { AllProducts } from './AllProducts'
 
 export const AppRouter = () => {
 
@@ -18,6 +19,7 @@ export const AppRouter = () => {
       <Route path='/products-by-category' element={<ProductsCategory/>} />
       
       <Route path='/sort/:id' element={<SortByAlphabet/>}/>
+      <Route path='/allProducts' element={<AllProducts/>}></Route>
       <Route path='/product-page/:productName' element={<ProductDescription/>}/>
       <Route path='/get-quote' element={<GetQuote/>} />
       {/* <Route path='software-catalog' element={<SoftwareCatalog {...props}/>}>

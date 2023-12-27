@@ -5,10 +5,24 @@ import test from "./test.json"
 import { CardBuilder } from "./common/Cards"
 import { get, isEmpty } from "lodash"
 import  comp  from "./svg/PS-007299.png"
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+// import { getProductsStart } from './store/slices/productSlice';
+import { createAction } from '@reduxjs/toolkit';
+
+const getProductsStart = createAction('users/getProductsStart')
 
 export const SortByAlphabet = () => {
     const { id } = useParams()
     
+    
+    // make backend call and start rendering the products
+    const dispatch = useDispatch()
+
+    useEffect(() =>{
+      dispatch(getProductsStart())
+    }, [dispatch, getProductsStart]) 
+    // first api 
     const data  = test
     console.log(data);
     const displaycards = data.map((card) => ({

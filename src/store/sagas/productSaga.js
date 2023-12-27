@@ -4,7 +4,6 @@ import * as api from '../../services/apiCall'
 
 function * getProducts () {
     try {
-        console.log('there');
         const response = yield call(api.primesynthService.getAllProducts)
         yield put(actions.getProductsSuccess(response.data))
     } catch (error) {
