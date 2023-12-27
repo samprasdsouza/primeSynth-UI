@@ -18,15 +18,14 @@ export const AllProducts = () => {
 
     const productsData = useSelector(state => state.products)
     const products = get(productsData, ['products', 'data', '_embedded', 'products'], '')
-    const nextPage = get(productsData, ['products', 'data', '_links', 'next', 'href'], '')
+    const nextPageUrl = get(productsData, ['products', 'data', '_links', 'next', 'href'], '')
+    const previousPageUrl = get(productsData, ['products', 'data', '_links', 'previous', 'href'], '')
 
     useEffect(() =>{
-        console.log('dispatch event');
-        dispatch(getProductsStart())
+        if( products)dispatch(getProductsStart({}))
     }, [dispatch, getProductsStart])
 
     
-    console.log('products', products);
 
     const displaycards = products ? products.map((card) => ({
         TopImage: <div><img style={{ height: '250px', width: '250px'}} src={comp} alt="logo"/></div>,
@@ -43,6 +42,15 @@ export const AllProducts = () => {
         styleBodyCenter: true
       })) : ''
 
+    const nextPage = () => {
+        console.log('dispatch next event');
+        dispatch(getProductsStart(nextPageUrl))
+    }
+
+    const previousPage = () => {
+        console.log('dispatch previous event');
+        dispatch(getProductsStart(previousPageUrl))
+    }
     return(
         <>
         <Header/>
@@ -54,8 +62,8 @@ export const AllProducts = () => {
                 cardCompleteComponentStyle={{ overflow: 'auto' }}
               />}
               <div className="d-flex justify-content-center">
-                <Button className="p-3 m-2"> Prev </Button>
-                <Button className="p-3 m-2" > Next </Button>
+                <Button className="p-3 m-2" onClick={previousPage}> Prev </Button>
+                <Button className="p-3 m-2" onClick={nextPage}> Next </Button>
               </div>
         <Footer/>
         </>
