@@ -7,7 +7,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { get, isEmpty } from "lodash";
 import { CardBuilder } from "./common/Cards";
 import  comp  from "./svg/PS-007299.png"
-import { Button } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 // import { useNavigate } from "react-router-dom";
 
 const getProductsStart = createAction('users/getProductsStart')
@@ -17,6 +17,7 @@ export const AllProducts = () => {
     // const navigate = useNavigate()
 
     const productsData = useSelector(state => state.products)
+    const isLoading = useSelector(state => state.products.loading)
     const products = get(productsData, ['products', '_embedded', 'products'], '')
     const nextPageUrl = get(productsData, [ 'products', '_links', 'next', 'href'], '')
     const previousPageUrl = get(productsData, ['products', '_links', 'previous', 'href'], '')
@@ -49,6 +50,15 @@ export const AllProducts = () => {
     const previousPage = () => {
         dispatch(getProductsStart(previousPageUrl))
     }
+
+    if (isLoading === false) {
+      return(
+          <div className="d-flex justify-content-center align-items-center">
+              <Spinner />
+          </div>
+      )
+    }
+
     return(
         <>
         <Header/>

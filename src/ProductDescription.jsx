@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { createAction } from '@reduxjs/toolkit';
 import { useEffect } from 'react'
+import { Spinner } from "react-bootstrap";
 
 const getProductStart = createAction('users/getProductStart')
 
@@ -17,9 +18,19 @@ export const ProductDescription = () => {
         navigate('/get-quote')
     }
     const product = useSelector(state => state.products.product)
+    const isLoading = useSelector(state => state.products.loading)
+
     useEffect(() => {
         dispatch(getProductStart(productId))
     }, [dispatch, getProductStart])
+
+    if (isLoading === true) {
+        return(
+            <div className="d-flex justify-content-center align-items-center">
+                <Spinner />
+            </div>
+        )
+    }
 
     return (
         <>
