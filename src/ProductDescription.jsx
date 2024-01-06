@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import logo from "./svg/PS-007299.png"
 import Button from 'react-bootstrap/Button';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createAction } from '@reduxjs/toolkit';
 import { useEffect } from 'react'
 
@@ -11,17 +11,16 @@ const getProductStart = createAction('users/getProductStart')
 
 export const ProductDescription = () => {
     const dispatch = useDispatch()
-
     const { productId } = useParams()
-    console.log(productId);
     const navigate = useNavigate()
     const navigateToGetQuote = () => {
         navigate('/get-quote')
     }
-
+    const product = useSelector(state => state.products.product)
     useEffect(() => {
         dispatch(getProductStart(productId))
     }, [dispatch, getProductStart])
+
     return (
         <>
             <Header />
@@ -30,8 +29,10 @@ export const ProductDescription = () => {
                     <div className=""  ><img style={{ border: '1px solid #FFA800' }} src={logo} alt="logo"></img></div>
                     <div className="w-100">
                         <div className="w-100 d-flex justify-content-center ">
-                            <div className="">Aceclofenac EP Impurity A</div>
+                            <div className="">{product.name}</div>
                         </div>
+                        {/* start displaying the product data */}
+
                         <div className="w-100 h-100 d-flex align-items-center m-3">
                             <div>
                                 <div className="w-100">For Pricing:</div>

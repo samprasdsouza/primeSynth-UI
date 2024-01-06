@@ -20,6 +20,6 @@ export const primesynthService = {
             url,
         )
 
-        return { data: getProductById }
+        return { data: getProductById.data }
     }
 }

@@ -14,8 +14,7 @@ function * getProducts (payload) {
 function * getProduct (payload) {
     try {
         const response = yield call(api.primesynthService.getProductById, payload)
-        console.log('response', response.data);
-        yield put(actions.getProductSucces(response.data))
+        yield put(actions.getProductSuccess(response.data))
     } catch (error) {
         yield put(actions.getProductFailure())
     }
