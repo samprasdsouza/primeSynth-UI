@@ -13,7 +13,6 @@ export const GetQuote = () => {
 
     const handleInput = (event) => {
         let { name, value } = event.target
-        console.log(name, value);
         handleChange(name, value)
     }
 

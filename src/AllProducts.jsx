@@ -17,12 +17,12 @@ export const AllProducts = () => {
     // const navigate = useNavigate()
 
     const productsData = useSelector(state => state.products)
-    const products = get(productsData, ['products', 'data', '_embedded', 'products'], '')
-    const nextPageUrl = get(productsData, ['products', 'data', '_links', 'next', 'href'], '')
-    const previousPageUrl = get(productsData, ['products', 'data', '_links', 'previous', 'href'], '')
-
+    const products = get(productsData, ['products', '_embedded', 'products'], '')
+    const nextPageUrl = get(productsData, [ 'products', '_links', 'next', 'href'], '')
+    const previousPageUrl = get(productsData, ['products', '_links', 'previous', 'href'], '')
+    
     useEffect(() =>{
-        if( products)dispatch(getProductsStart({}))
+        dispatch(getProductsStart({}))
     }, [dispatch, getProductsStart])
 
     
@@ -37,18 +37,16 @@ export const AllProducts = () => {
         cardStyle: isEmpty(card?.cardStyle)
           ? { height: '360px', width: '350px' }
           : card?.cardStyle,
-        navigateTo: `/product-page/${get(card, ["product_name"], " ")}`,
-        openInNewTab: true,
+        navigateTo: `/product/${get(card, ["id"], " ")}`,
+        openInNewTab: false,
         styleBodyCenter: true
       })) : ''
 
     const nextPage = () => {
-        console.log('dispatch next event');
         dispatch(getProductsStart(nextPageUrl))
     }
 
     const previousPage = () => {
-        console.log('dispatch previous event');
         dispatch(getProductsStart(previousPageUrl))
     }
     return(

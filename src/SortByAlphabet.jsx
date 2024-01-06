@@ -24,7 +24,6 @@ export const SortByAlphabet = () => {
     }, [dispatch, getProductsStart]) 
     // first api 
     const data  = test
-    console.log(data);
     const displaycards = data.map((card) => ({
         TopImage: <div><img style={{ height: '250px', width: '250px'}} src={comp} alt="logo"/></div>,
         Title: (
@@ -35,7 +34,7 @@ export const SortByAlphabet = () => {
         cardStyle: isEmpty(card.cardStyle)
           ? { height: '360px', width: '350px' }
           : card.cardStyle,
-        navigateTo: `/product-page/${get(card, ["product_name"], " ")}`,
+        navigateTo: `/product/${get(card, ["id"], " ")}`,
         openInNewTab: true,
         styleBodyCenter: true
       }))

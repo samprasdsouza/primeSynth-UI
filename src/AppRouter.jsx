@@ -20,7 +20,8 @@ export const AppRouter = () => {
       
       <Route path='/sort/:id' element={<SortByAlphabet/>}/>
       <Route path='/allProducts' element={<AllProducts/>}></Route>
-      <Route path='/product-page/:productName' element={<ProductDescription/>}/>
+      {/* <Route path='/product-page/:productName' element={<ProductDescription/>}/> */}
+      <Route path='/product/:productId' element={<ProductDescription/>} />
       <Route path='/get-quote' element={<GetQuote/>} />
       {/* <Route path='software-catalog' element={<SoftwareCatalog {...props}/>}>
         <Route index element={<ApiExplorer />} />

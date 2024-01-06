@@ -3,16 +3,25 @@ import Header from "./Header";
 import Footer from "./Footer";
 import logo from "./svg/PS-007299.png"
 import Button from 'react-bootstrap/Button';
+import { useDispatch } from 'react-redux';
+import { createAction } from '@reduxjs/toolkit';
+import { useEffect } from 'react'
 
-
+const getProductStart = createAction('users/getProductStart')
 
 export const ProductDescription = () => {
-    const { productName } = useParams()
-    console.log(productName);
+    const dispatch = useDispatch()
+
+    const { productId } = useParams()
+    console.log(productId);
     const navigate = useNavigate()
     const navigateToGetQuote = () => {
         navigate('/get-quote')
     }
+
+    useEffect(() => {
+        dispatch(getProductStart(productId))
+    }, [dispatch, getProductStart])
     return (
         <>
             <Header />

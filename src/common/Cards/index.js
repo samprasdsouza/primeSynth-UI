@@ -5,7 +5,6 @@ import { CardStructure } from './CardStructure'
 
 export const CardBuilder = (props) => {
   const { cards, rowCardCount = 1, title, cardCompleteComponentStyle, cardBodyClassStyle = 'p-2', cardClassStyle = 'p-2' } = props
-  console.log('cards', cards);
   return (
     <div className='w-100 '>
       {!isEmpty(title) && (
