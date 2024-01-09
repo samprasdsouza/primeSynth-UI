@@ -51,7 +51,7 @@ export const AllProducts = () => {
         dispatch(getProductsStart(previousPageUrl))
     }
 
-    if (isLoading === false) {
+    if (isLoading === true) {
       return(
           <div className="d-flex justify-content-center align-items-center">
               <Spinner />

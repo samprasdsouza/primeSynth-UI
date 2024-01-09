@@ -1,3 +1,4 @@
+import { SearchBar } from './SearchBar';
 import logo from './svg/Primesynth.png'
 function Header() {
     return (
@@ -9,7 +10,7 @@ function Header() {
                 <div className="p-3"><a href="/contact-us" className='anchor-text'> Contact US </a></div>
                 <div className="p-3"><a href="/contact-us" className='anchor-text'>Services </a></div>
                 <div className="p-3"><a href="/contact-us" className='anchor-text'>About Us </a></div>
-                <div className="p-3">Search Bar</div>
+                <div className="p-3"><SearchBar/></div>
             </div>
 
       </div>

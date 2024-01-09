@@ -64,3 +64,9 @@
 .btn-background {
   background: #12649B !important;
 }
+
+.search-bar::placeholder{
+  color: #686868;
+  font-size: 14px;
+  line-height: 16px;
+}
