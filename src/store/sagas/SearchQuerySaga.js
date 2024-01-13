@@ -13,7 +13,7 @@ function * getSearchQuery (payload) {
 
 
 function * searchQuerySaga () {
-    yield takeLatest('users/getSearchQuery', getSearchQuery);
+    yield takeLatest('users/getSearchQueryStart', getSearchQuery);
 }
 
 export default searchQuerySaga

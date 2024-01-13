@@ -23,7 +23,7 @@ export const primesynthService = {
         return { data: getProductById.data }
     },
     getSearchQuery: async(payload) => {
-        let url = `${PRIMESYNTH_API_URL}/api/v1/`
+        let url = `${PRIMESYNTH_API_URL}/api/v1/products/search?searchQuery=${payload?.payload?.value}&pageNumber=${payload?.payload?.pageNumber}&limit=${payload?.payload?.limit}`
     
         const getSearchQuery = await axios.get(
             url

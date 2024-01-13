@@ -1,19 +1,26 @@
-import { Form } from "react-bootstrap"
 import { IconSearch } from "./svg/Icons/IconSearch"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { isEmpty } from "lodash"
 import { InputText } from "./common/InputText"
+import { useDispatch } from "react-redux"
+import { createAction } from "@reduxjs/toolkit"
 
-
-
+const getSearchQueryStart = createAction('users/getSearchQueryStart')
 
 export const SearchBar = () => {
     const [value, setValue] = useState('')
+
+    const dispatch = useDispatch()
+
     const handleChange = (event) => {
         setValue(event.target.value)
         console.log('event', event);
     }
     console.log('value', value);
+
+    useEffect(() => {
+        dispatch(getSearchQueryStart({ searchQuery: value, pageNumber: 10, limit: 12}))
+    }, [dispatch])
     return (
         <div>
             <div className="">
