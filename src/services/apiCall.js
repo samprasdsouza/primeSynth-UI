@@ -21,5 +21,14 @@ export const primesynthService = {
         )
 
         return { data: getProductById.data }
+    },
+    getSearchQuery: async(payload) => {
+        let url = `${PRIMESYNTH_API_URL}/api/v1/`
+    
+        const getSearchQuery = await axios.get(
+            url
+        )
+
+        return { data: getSearchQuery.data }
     }
 }
