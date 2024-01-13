@@ -20,7 +20,7 @@ export const SearchBar = () => {
 
     useEffect(() => {
         dispatch(getSearchQueryStart({ searchQuery: value, pageNumber: 10, limit: 12}))
-    }, [dispatch])
+    }, [dispatch, getSearchQueryStart, value])
     return (
         <div>
             <div className="">
