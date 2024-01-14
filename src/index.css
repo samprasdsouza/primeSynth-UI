@@ -70,3 +70,24 @@
   font-size: 14px;
   line-height: 16px;
 }
+
+.text-box-container .right-icon {
+  position: absolute;
+  right: 16px;
+}
+
+.text-box-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.text-box-container .left-icon {
+  position: absolute;
+  left: 16px;
+}
+
+/* .search-results {
+  background-color: #12649B;
+} */

@@ -15,7 +15,6 @@ const getProductsStart = createAction('users/getProductsStart')
 export const SortByAlphabet = () => {
     const { id } = useParams()
     
-    
     // make backend call and start rendering the products
     const dispatch = useDispatch()
 

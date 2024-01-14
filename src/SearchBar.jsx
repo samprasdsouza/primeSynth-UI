@@ -4,6 +4,7 @@ import { isEmpty } from "lodash"
 import { InputText } from "./common/InputText"
 import { useDispatch } from "react-redux"
 import { createAction } from "@reduxjs/toolkit"
+import { SearchQueryResults } from "./SearchQueryResults"
 
 const getSearchQueryStart = createAction('users/getSearchQueryStart')
 
@@ -19,7 +20,7 @@ export const SearchBar = () => {
     console.log('value', value);
 
     useEffect(() => {
-        dispatch(getSearchQueryStart({ searchQuery: value, pageNumber: 10, limit: 12}))
+        if (!isEmpty(value)) dispatch(getSearchQueryStart({ searchQuery: value, pageNumber: 10, limit: 1}))
     }, [dispatch, getSearchQueryStart, value])
     return (
         <div>
@@ -34,7 +35,7 @@ export const SearchBar = () => {
             />
             </div>
             {!isEmpty(value) && <div style={{ background: '1px solid black' }}>
-                Recommendations.....
+                <SearchQueryResults/>
             </div>
             }
         </div>
