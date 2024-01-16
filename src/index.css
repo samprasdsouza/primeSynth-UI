@@ -76,7 +76,7 @@
 }
 
 .text-box-container {
-  position: fixed;
+  position: relative;
   display: flex;
   align-items: center;
   width: 300px;
