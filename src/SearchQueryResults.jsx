@@ -22,7 +22,7 @@ export const SearchQueryResults = () => {
     }))
     console.log('searchResultsTab', searchResultsTab);
     return(
-        <div className="search-results">
+        <div className="search-results" style={{ marginTop: '800px'}}>
             <CardBuilder
                 cards={searchResultsTab}
                 rowCardCount={1}

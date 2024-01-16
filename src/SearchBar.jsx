@@ -24,7 +24,7 @@ export const SearchBar = () => {
     }, [dispatch, getSearchQueryStart, value])
     return (
         <div>
-            <div className="">
+            <div className="" style={{ postion: 'fixed' }}>
             <InputText
                     name="phone"
                     placeholder="Search Products"
@@ -34,10 +34,10 @@ export const SearchBar = () => {
                     onChange={handleChange}
             />
             </div>
-            {!isEmpty(value) && <div style={{ background: '1px solid black' }}>
+            {!isEmpty(value) && <div style={{ background: '1px solid black'}}>
                 <SearchQueryResults/>
             </div>
-            }
+            }  
         </div>
     )
 }
