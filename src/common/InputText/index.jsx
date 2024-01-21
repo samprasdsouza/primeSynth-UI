@@ -31,7 +31,7 @@ export function InputText ({
         </label>
       )}
       {description && <div className='text-10'>{description}</div>}
-      <div className='text-box-container'>
+      <div className='text-box-container w-100'>
         {leftIcon && <span className={`left-icon ${alertMessageClass}`}>{leftIcon}</span>}
         <input
           className={`form-control mt-1 ${variant || ''} ${rightIcon ? 'input-with-right-icon' : ''}`}

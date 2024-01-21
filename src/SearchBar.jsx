@@ -5,10 +5,11 @@ import { InputText } from "./common/InputText"
 import { useDispatch } from "react-redux"
 import { createAction } from "@reduxjs/toolkit"
 import { SearchQueryResults } from "./SearchQueryResults"
+import './Searchbar.css'
 
 const getSearchQueryStart = createAction('users/getSearchQueryStart')
 
-export const SearchBar = () => {
+export const SearchBar = ({ }) => {
     const [value, setValue] = useState('')
 
     const dispatch = useDispatch()
@@ -20,24 +21,35 @@ export const SearchBar = () => {
     console.log('value', value);
 
     useEffect(() => {
-        if (!isEmpty(value)) dispatch(getSearchQueryStart({ searchQuery: value, pageNumber: 10, limit: 1}))
+        if (!isEmpty(value)) dispatch(getSearchQueryStart({ searchQuery: value, pageNumber: 10, limit: 2 }))
     }, [dispatch, getSearchQueryStart, value])
     return (
-        <div>
-            <div className="" style={{ postion: 'fixed' }}>
-            <InputText
-                    name="phone"
-                    placeholder="Search Products"
-                    rightIcon={<IconSearch/>}
-                    required
-                    value={value}
-                    onChange={handleChange}
-            />
+        <div className="w-100">
+            <div className="" style={{ postion: 'fixed', zIndex: '99' }}>
+                <div class="">
+                    <div class="searchInput">
+                        <InputText
+                            className="w-100"
+                            type="text"
+                            placeholder="Search Product"
+                            value={value}
+                            onChange={handleChange}
+                            rightIcon={IconSearch}
+                        />
+                        <div class="icon"><i class="fas fa-search"></i></div>
+                    </div>
+                    <div>
+                        {!isEmpty(value) && <div style={{ background: '1px solid black' }}>
+                            <div class="">
+                                <SearchQueryResults />
+                            </div>
+
+                        </div>
+                        }
+                    </div>
+                </div>
             </div>
-            {!isEmpty(value) && <div style={{ background: '1px solid black'}}>
-                <SearchQueryResults/>
-            </div>
-            }  
+
         </div>
     )
 }
