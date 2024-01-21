@@ -24,9 +24,9 @@ export const SearchBar = ({ }) => {
         if (!isEmpty(value)) dispatch(getSearchQueryStart({ searchQuery: value, pageNumber: 10, limit: 2 }))
     }, [dispatch, getSearchQueryStart, value])
     return (
-        <div className="w-100">
-            <div className="" >
-                <div class="" style={{ marginTop: '100px' }}>
+        <div className="w-100" style={{ marginTop: '100px'}}>
+            <div className="container" >
+                <div class="" style={{ marginTop: '200px' }}>
                     <div class="searchInput" >
                         <InputText
                             className="w-100"
