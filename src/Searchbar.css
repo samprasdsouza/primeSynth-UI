@@ -17,8 +17,8 @@ body{
 }
 
 .container{
-  max-width: 450px;
-  margin: 150px auto;
+  /* max-width: 450px; */
+  /* margin: 150px auto; */
 }
 
 .container .searchInput{
@@ -93,4 +93,5 @@ body{
 
 .search-results {
   background-color: #12649B;
+  position: fixed;
 }
