@@ -26,8 +26,8 @@ export const SearchBar = ({ }) => {
     return (
         <div className="w-100">
             <div className="" >
-                <div class="">
-                    <div class="searchInput">
+                <div class="" style={{ marginTop: '100px' }}>
+                    <div class="searchInput" >
                         <InputText
                             className="w-100"
                             type="text"
@@ -38,7 +38,7 @@ export const SearchBar = ({ }) => {
                         />
                         <div class="icon"><i class="fas fa-search"></i></div>
                     </div>
-                    <div>
+                    <div className="" >
                         {!isEmpty(value) && <div style={{ background: '1px solid black' }}>
                             <div class="">
                                 <SearchQueryResults />
