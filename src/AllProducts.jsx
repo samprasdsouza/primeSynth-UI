@@ -1,5 +1,5 @@
 import Footer from "./Footer"
-import Header from "./Header"
+import Header from "./common/Header"
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 // import { getProductsStart } from './store/slices/productSlice';

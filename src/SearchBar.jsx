@@ -25,7 +25,7 @@ export const SearchBar = ({ }) => {
     }, [dispatch, getSearchQueryStart, value])
     return (
         <div className="w-100">
-            <div className="" style={{ postion: 'fixed', zIndex: '99' }}>
+            <div className="" >
                 <div class="">
                     <div class="searchInput">
                         <InputText

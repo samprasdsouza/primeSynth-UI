@@ -1,5 +1,5 @@
 import Footer from "./Footer"
-import Header from "./Header"
+import Header from "./common/Header"
 
 export const ProductsCategory = () => {
     return (

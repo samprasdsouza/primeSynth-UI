@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Footer from "./Footer"
-import Header from "./Header"
+import Header from "./common/Header"
 import { InputText } from "./common/InputText"
 import { Button } from "react-bootstrap"
 

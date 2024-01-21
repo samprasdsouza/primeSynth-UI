@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom"
-import Header from "./Header";
+import Header from "./common/Header";
 import Footer from "./Footer";
 import logo from "./svg/PS-007299.png"
 import Button from 'react-bootstrap/Button';

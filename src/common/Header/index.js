@@ -1,8 +1,8 @@
-import { SearchBar } from './SearchBar';
-import logo from './svg/Primesynth.png'
+import { SearchBar } from '../../SearchBar';
+import logo from '../../svg/Primesynth.png'
 function Header() {
     return (
-        <div className='d-flex'>
+        <div className='header d-flex' style={{ height : '100px'}}>
             <div className='d-flex align-items-center' style={{ paddingLeft: "50px" }}><img src={logo} alt="logo" /></div>
             <div className='d-flex w-50 align-items-center'> <SearchBar /></div>
             <div className="d-flex align-items-center p-3"><a href="/" className='anchor-text'> Home </a></div>
