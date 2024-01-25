@@ -11,7 +11,7 @@ export default function App() {
       <div style={{}}>
         <Header />
       </div>
-      <div className="App">
+      <div className="App pt-100">
         <div ><img src={logo} alt="logo" style={{ width: '1792px', height: '750px' }} /></div>
         <div className="d-flex justify-content-center align-items-center" >PrimeSynth is a reliable supplier of reference standards, API impurities, R&D Chemicals & Custom synthesis products</div>
         <div className="d-flex justify-content-center align-items-center text text-color" style={{ fontSize: '50px' }}>Our Products</div>

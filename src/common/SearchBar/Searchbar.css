@@ -6,10 +6,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body{
-  background: #f4f5;
-  padding: 0 20px;
-}
 
 ::selection{
   color: #fff;

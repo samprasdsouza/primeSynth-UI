@@ -8,7 +8,7 @@ import { SortByAlphabet } from './SortByAlphabet'
 import { ProductDescription } from './ProductDescription'
 import { GetQuote } from './GetQuote'
 import { AllProducts } from './AllProducts'
-import { SearchBar } from './SearchBar'
+import { SearchBar } from './common/SearchBar/SearchBar'
 
 export const AppRouter = () => {
 

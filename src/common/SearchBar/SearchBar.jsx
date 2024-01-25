@@ -1,10 +1,10 @@
-import { IconSearch } from "./svg/Icons/IconSearch"
+import { IconSearch } from "../../svg/Icons/IconSearch"
 import { useEffect, useState } from "react"
 import { isEmpty } from "lodash"
-import { InputText } from "./common/InputText"
+import { InputText } from "../InputText"
 import { useDispatch } from "react-redux"
 import { createAction } from "@reduxjs/toolkit"
-import { SearchQueryResults } from "./SearchQueryResults"
+import { SearchQueryResults } from "../../SearchQueryResults"
 import './Searchbar.css'
 
 const getSearchQueryStart = createAction('users/getSearchQueryStart')

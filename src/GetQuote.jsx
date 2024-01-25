@@ -19,7 +19,7 @@ export const GetQuote = () => {
     return (
         <>
             <Header />
-            <div>
+            <div className="pt-100">
                 <div className="d-flex justify-content-center">
                     <span className="text text-color">Get a Quote</span>
                 </div>

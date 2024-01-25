@@ -30,5 +30,19 @@ export const primesynthService = {
         )
 
         return { data: getSearchQuery.data }
+    },
+    postContactUs: async(payload) => {
+        let url = ``
+
+        console.log(payload);
+        const reponse = await axios({
+            method: 'POST',
+            url: ``,
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            data: {...payload}
+          })
+          return { data: reponse.data }
     }
 }

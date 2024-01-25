@@ -1,6 +1,7 @@
 import { get, map} from "lodash";
 import { useSelector } from "react-redux"
 import { CardBuilder } from "./common/Cards";
+import { PRIMESYNTH_API_URL } from "./constants";
 
 
 
@@ -18,7 +19,9 @@ export const SearchQueryResults = () => {
             <div> 
                 <span className="text-color">{get(product, ["name"], '')}</span>
             </div>
-        )
+        ),
+        navigateTo: `${window.location.origin}/product/${product?.id}`,
+        openInNewTab: true
     }))
     console.log('searchResultsTab', searchResultsTab);
     return(

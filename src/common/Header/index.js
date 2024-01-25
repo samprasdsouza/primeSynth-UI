@@ -1,4 +1,4 @@
-import { SearchBar } from '../../SearchBar';
+import { SearchBar } from '../SearchBar/SearchBar';
 import logo from '../../svg/Primesynth.png'
 function Header() {
     return (
