@@ -15,6 +15,7 @@ export const ContactUs = () => {
     let { name, value } = event.target
     handleChange(name, value)
   }
+  console.log(contactUsForm);
   return (
     <>
       <Header />

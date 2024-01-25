@@ -8,7 +8,7 @@ export default function App() {
 
   return (
     <>
-      <div style={{}}>
+      <div>
         <Header />
       </div>
       <div className="App pt-100">
