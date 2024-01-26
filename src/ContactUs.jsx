@@ -3,9 +3,13 @@ import Footer from "./Footer"
 import Header from "./common/Header"
 import { InputText } from "./common/InputText"
 import { Button } from "react-bootstrap"
+import  InputMultiSelect  from "./common/InputMultiSelect"
+import { countrylabel } from "./constants/countryName"
 
 export const ContactUs = () => {
   const [contactUsForm, setContactUsForm] = useState({})
+
+  const options = countrylabel
 
   const handleChange = (field, value) => {
     setContactUsForm({ ...contactUsForm, [field]: value })
@@ -16,6 +20,7 @@ export const ContactUs = () => {
     handleChange(name, value)
   }
   console.log(contactUsForm);
+  
   return (
     <>
       <Header />
@@ -65,9 +70,10 @@ export const ContactUs = () => {
                     />
                   </div>
                   <div className="p-3">
-                    <InputText
+                    <InputMultiSelect
                       name="country"
                       label="Country"
+                      options={options}
                       required
                       value={contactUsForm?.country}
                       onChange={handleInput}

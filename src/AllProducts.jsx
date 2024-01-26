@@ -66,7 +66,7 @@ export const AllProducts = () => {
         {displaycards && <CardBuilder
           cards={displaycards}
           rowCardCount={6}
-          title="All Services"
+          title="All Products"
           cardCompleteComponentStyle={{ overflow: 'auto' }}
         />}
         <div className="d-flex justify-content-center">
