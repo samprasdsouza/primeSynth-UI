@@ -19,6 +19,11 @@ export const ContactUs = () => {
     let { name, value } = event.target
     handleChange(name, value)
   }
+
+  const handleMultiInput = (name, value) => {
+    handleChange(name, value)
+  }
+
   console.log(contactUsForm);
   
   return (
@@ -40,7 +45,7 @@ export const ContactUs = () => {
             <div className="" style={{ width: '816px' }}>
               <div className="">
                 <div className="d-flex justify-content-center align-items-center">
-                  <div className="p-3">
+                  <div className="p-3 w-50">
                     <InputText
                       name="name"
                       label="Name"
@@ -49,7 +54,7 @@ export const ContactUs = () => {
                       onChange={handleInput}
                     />
                   </div>
-                  <div className="p-3">
+                  <div className="p-3 w-50">
                     <InputText
                       name="email"
                       label="Email"
@@ -60,7 +65,7 @@ export const ContactUs = () => {
                   </div>
                 </div>
                 <div className="d-flex justify-content-center align-items-center">
-                  <div className="p-3">
+                  <div className="p-3 w-50">
                     <InputText
                       name="phone"
                       label="Phone"
@@ -69,19 +74,20 @@ export const ContactUs = () => {
                       onChange={handleInput}
                     />
                   </div>
-                  <div className="p-3">
+                  <div className="p-3 w-50">
                     <InputMultiSelect
                       name="country"
                       label="Country"
                       options={options}
                       required
                       value={contactUsForm?.country}
-                      onChange={handleInput}
+                      onChange={handleMultiInput}
+                      isMulti={false}
                     />
                   </div>
                 </div>
                 <div className="d-flex justify-content-center align-items-center">
-                  <div className="p-3">
+                  <div className="p-3 w-50">
                     <InputText
                       name="subject"
                       label="Subject"
@@ -90,7 +96,7 @@ export const ContactUs = () => {
                       onChange={handleInput}
                     />
                   </div>
-                  <div className="p-3">
+                  <div className="p-3 w-50">
                     <InputText
                       name="message"
                       label="Message"

@@ -3,6 +3,7 @@ import Select from 'react-select'
 // import { Tooltip } from '@cimpress/react-components'
 
 function InputMultiSelect ({
+  isMulti = true,
   value,
   label,
   required,
@@ -71,7 +72,7 @@ function InputMultiSelect ({
           <span className={`left-icon ${alertMessageClass}`}>{leftIcon}</span>
         )}
         <Select
-          isMulti
+          isMulti={isMulti}
           styles={customStyles}
           value={value}
           onChange={handleChange}
