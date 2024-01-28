@@ -3,12 +3,20 @@ import Footer from "./Footer"
 import Header from "./common/Header"
 import { InputText } from "./common/InputText"
 import { Button } from "react-bootstrap"
-import  InputMultiSelect  from "./common/InputMultiSelect"
+import InputMultiSelect from "./common/InputMultiSelect"
 import { countrylabel } from "./constants/countryName"
+import { isEmpty, trim } from "lodash"
 
 export const ContactUs = () => {
   const [contactUsForm, setContactUsForm] = useState({})
-
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  })
+ 
   const options = countrylabel
 
   const handleChange = (field, value) => {
@@ -20,12 +28,23 @@ export const ContactUs = () => {
     handleChange(name, value)
   }
 
+  const validateText = (event) => {
+    let { name, value } = event.target
+    value = trim(value)
+    handleChange(name, value)
+
+    if (isEmpty(value)) {
+      setErrors((prev) => ({ ...prev, [name]: 'Please provide a valid input' }))
+    } else {
+      setErrors((prev) => ({ ...prev, [name]: '' }))
+    }
+  }
+
   const handleMultiInput = (name, value) => {
     handleChange(name, value)
   }
 
-  console.log(contactUsForm);
-  
+
   return (
     <>
       <Header />
@@ -51,7 +70,10 @@ export const ContactUs = () => {
                       label="Name"
                       required
                       value={contactUsForm?.name}
+                      alertMessage={errors.name}
+                      variant={!isEmpty(errors.name) ? 'error' : ''}
                       onChange={handleInput}
+                      onBlur={validateText}
                     />
                   </div>
                   <div className="p-3 w-50">
@@ -60,7 +82,10 @@ export const ContactUs = () => {
                       label="Email"
                       required
                       value={contactUsForm?.email}
+                      alertMessage={errors.email}
+                      variant={errors.email ? 'error' : ''}
                       onChange={handleInput}
+                      onBlur={validateText}
                     />
                   </div>
                 </div>
@@ -71,7 +96,10 @@ export const ContactUs = () => {
                       label="Phone"
                       required
                       value={contactUsForm?.phone}
+                      alertMessage={errors.phone}
+                      variant={errors.phone ? 'error' : ''}
                       onChange={handleInput}
+                      onBlur={validateText}
                     />
                   </div>
                   <div className="p-3 w-50">
@@ -93,7 +121,10 @@ export const ContactUs = () => {
                       label="Subject"
                       required
                       value={contactUsForm?.subject}
+                      alertMessage={errors.subject}
+                      variant={errors.subject ? 'error' : ''}
                       onChange={handleInput}
+                      onBlur={validateText}
                     />
                   </div>
                   <div className="p-3 w-50">
@@ -102,14 +133,18 @@ export const ContactUs = () => {
                       label="Message"
                       required
                       value={contactUsForm?.message}
+                      alertMessage={errors.message}
+                      variant={errors.message ? 'error' : ''}
                       onChange={handleInput}
+                      onBlur={validateText}
                     />
                   </div>
                 </div>
 
               </div>
               <div className="d-flex justify-content-center align-items-center">
-                <Button type="primary">Submit</Button>
+                {/** send the contact payload to backend */}
+                <Button type="primary" >Submit</Button>
               </div>
             </div>
           </div>

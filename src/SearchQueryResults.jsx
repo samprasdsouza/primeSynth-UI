@@ -1,8 +1,6 @@
 import { get, map} from "lodash";
 import { useSelector } from "react-redux"
 import { CardBuilder } from "./common/Cards";
-import { PRIMESYNTH_API_URL } from "./constants";
-
 
 
 
