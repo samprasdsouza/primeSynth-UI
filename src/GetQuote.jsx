@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Footer from "./Footer"
+import Footer from "./common/Footer"
 import Header from "./common/Header"
 import { InputText } from "./common/InputText"
 import { Button } from "react-bootstrap"

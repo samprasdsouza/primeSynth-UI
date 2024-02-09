@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Header from './common/Header';
-import Footer from './Footer';
+import Footer from './common/Footer';
 import logo from './svg/second-img.png'
 import firstLogo from './svg/first-img.png'
 

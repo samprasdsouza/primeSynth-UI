@@ -1,4 +1,4 @@
-import Footer from "./Footer"
+import Footer from "./common/Footer"
 import Header from "./common/Header"
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';

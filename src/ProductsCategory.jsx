@@ -1,4 +1,4 @@
-import Footer from "./Footer"
+import Footer from "./common/Footer"
 import Header from "./common/Header"
 
 export const ProductsCategory = () => {

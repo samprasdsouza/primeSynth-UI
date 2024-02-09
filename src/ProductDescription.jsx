@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom"
 import Header from "./common/Header";
-import Footer from "./Footer";
+import Footer from "./common/Footer";
 import logo from "./svg/PS-007299.png"
 import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';

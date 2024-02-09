@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import Header from "./common/Header"
-import Footer from "./Footer"
+import Footer from "./common/Footer"
 import test from "./test.json"
 import { CardBuilder } from "./common/Cards"
 import { get, isEmpty } from "lodash"
