@@ -24,6 +24,7 @@ export const SortByAlphabet = () => {
     // first api 
     const data  = test
     const displaycards = data.map((card) => ({
+        cardHeader: <div>{card?.product_name}</div>,
         TopImage: <div><img style={{ height: '250px', width: '250px'}} src={comp} alt="logo"/></div>,
         Title: (
           <div style={{ background:"#FFA800"}} className="p-2">
@@ -41,13 +42,13 @@ export const SortByAlphabet = () => {
     return (
         <>
         <Header/>
-            {id}
+          <div className="pt-100">
             <CardBuilder
                 cards={displaycards}
                 rowCardCount={6}
-                title="All Services"
                 cardCompleteComponentStyle={{ overflow: 'auto' }}
               />
+          </div>
         <Footer/>
         </>
     )

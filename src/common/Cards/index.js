@@ -28,7 +28,10 @@ export const CardBuilder = (props) => {
                       className='custom-card w-100'
                       style={card.cardStyle}
                     >
-                      <CardStructure card={card}/>
+                      <CardStructure 
+                      card={card}
+                      header={card.cardHeader}
+                      />
                     </Card>
                   </div>
                 </a>
