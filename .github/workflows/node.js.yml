@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -20,6 +20,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'node_modules'
-    - name: Run npm ci with Debug Logging
-      run: npm ci --verbose
+    - run: npm ci
     - run: npm run build --if-present
