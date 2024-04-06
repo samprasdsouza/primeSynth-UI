@@ -7,12 +7,13 @@ export const ProductsCategory = () => {
             <Header />
             <div className="pt-100">
                 <div className="d-flex justify-content-center text"> Our Products</div>
+                <div>
                 <div className="d-flex justify-content-center">
                     <div>
                         <div style={{ width: '200px' }} className="col p-2 d-flex justify-content-center align-items-center bg-orange my-3 mx-1"><a href="/allProducts" className="anchor-text text-light">All Products</a></div>
                     </div>
                 </div>
-                <div className="container">
+                {/* <div className="container">
                     <div className="row">
                         <div className="col p-2 d-flex justify-content-center align-items-center bg-orange my-3 mx-1 "><a href="/sort/a" className="anchor-text text-light">A </a></div>
                         <div className="col p-2 d-flex justify-content-center align-items-center bg-orange my-3 mx-1">B</div>
@@ -53,6 +54,7 @@ export const ProductsCategory = () => {
                         <div className="col p-2 d-flex justify-content-center align-items-center m-3 mx-1"></div>
                         <div className="col p-2 d-flex justify-content-center align-items-center "></div>
                     </div>
+                </div> */}
                 </div>
             </div>
             <Footer />

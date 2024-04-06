@@ -3,8 +3,18 @@ import Header from './common/Header';
 import Footer from './common/Footer';
 import logo from './svg/second-img.png'
 import firstLogo from './svg/first-img.png'
+import { useNavigate } from 'react-router-dom';
 
 export default function App() {
+  const navigate = useNavigate();
+
+  const handleBrowse = () => {
+    navigate('/allProducts');
+  };
+
+  const handleGetInTouch = () => {
+    navigate('/contact-us')
+  }
 
   return (
     <>
@@ -23,7 +33,7 @@ export default function App() {
           </div>
         </div>
         <div className='d-flex justify-content-center align-items-center p-3'>
-          <Button variant="primary" className='btn-background'>Browse</Button>
+          <Button variant="primary" className='btn-background' onClick={handleBrowse}>Browse</Button>
         </div>
         <div>
           <div><img src={firstLogo} alt="logo" style={{ width: '1792px', height: '750px' }} /></div>
@@ -31,7 +41,7 @@ export default function App() {
         <div className='d-flex justify-content-center align-items-center' >
           <div>
             <div>If you’re looking for a specific product and can’t find it. One of our staff members will be happy to assist you.</div>
-            <div className='d-flex justify-content-center align-items-center'> <Button type='primary' className='btn-background m-3'> Get in Touch</Button></div>
+            <div className='d-flex justify-content-center align-items-center'> <Button type='primary' className='btn-background m-3' onClick={handleGetInTouch}> Get in Touch</Button></div>
           </div>
         </div>
         <Footer />

@@ -21,7 +21,7 @@ export const SearchBar = ({ }) => {
     console.log('value', value);
 
     useEffect(() => {
-        if (!isEmpty(value)) dispatch(getSearchQueryStart({ searchQuery: value, pageNumber: 10, limit: 2 }))
+        if (!isEmpty(value)) dispatch(getSearchQueryStart({ searchQuery: value, pageNumber: 0, limit: 2 }))
     }, [dispatch, getSearchQueryStart, value])
     return (
         <div className="w-100" >
