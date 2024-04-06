@@ -21,7 +21,7 @@ export const SearchBar = ({ }) => {
     console.log('value', value);
 
     useEffect(() => {
-        if (!isEmpty(value)) dispatch(getSearchQueryStart({ searchQuery: value, pageNumber: 0, limit: 2 }))
+        if (!isEmpty(value)) dispatch(getSearchQueryStart({ searchQuery: value, pageNumber: 0, limit: 10 }))
     }, [dispatch, getSearchQueryStart, value])
     return (
         <div className="w-100" >
@@ -29,7 +29,7 @@ export const SearchBar = ({ }) => {
                 <div class="">
                     <div class="searchInput" >
                         <InputText
-                            className="w-100"
+                            className="w-80"
                             type="text"
                             placeholder="Search Product"
                             value={value}
@@ -38,9 +38,9 @@ export const SearchBar = ({ }) => {
                         />
                         <div class="icon"><i class="fas fa-search"></i></div>
                     </div>
-                    <div className="" >
+                    <div className="w-80" >
                         {!isEmpty(value) && <div style={{ background: '1px solid black' }}>
-                            <div class="">
+                            <div class="w-80">
                                 <SearchQueryResults />
                             </div>
 

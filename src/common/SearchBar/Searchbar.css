@@ -91,3 +91,7 @@
   background-color: #12649B;
   position: fixed;
 }
+
+.btn-background-search-results {
+  background: #b8c1c7 !important;
+}
